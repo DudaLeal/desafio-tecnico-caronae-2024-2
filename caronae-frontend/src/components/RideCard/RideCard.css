@@ -48,19 +48,3 @@
 .card strong {
   font-weight: bold;
 }
-
-.location-time {
-  display: flex;
-  justify-content: space-between;
-}
-
-.location-time p {
-  margin: 0;
-  padding: 0;
-  flex: 1;
-  text-align: left;
-}
-
-.location-time p:first-child {
-  margin-right: 16px;
-}
