@@ -1,4 +1,3 @@
-// src/pages/HomePage.jsx
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import RideCard from '../../components/RideCard/RideCard';
@@ -18,12 +17,10 @@ const HomePage = () => {
       });
   }, []);
 
-
   if (error) return <p>Error: {error.message}</p>;
 
   return (
     <div className="home-container">
-      <h1>Caronas disponíveis</h1>
       <div className="card-container">
         {caronas.length > 0 ? (
           caronas.map((carona, index) => (
