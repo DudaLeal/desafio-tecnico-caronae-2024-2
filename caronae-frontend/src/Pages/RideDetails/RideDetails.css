@@ -1,0 +1,32 @@
+.ride-details {
+    padding: 20px;
+    max-width: 600px;
+    margin-top:  80px;
+  }
+
+  .driver-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .driver-info img {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    margin-right: 20px;
+  }
+
+  .ride-info h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+
+  .ride-info p {
+    margin: 5px 0;
+    font-size: 1.1em;
+  }
+
+  .ride-info strong {
+    font-weight: bold;
+  }
