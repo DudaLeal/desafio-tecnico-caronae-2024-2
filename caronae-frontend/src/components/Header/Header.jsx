@@ -1,11 +1,12 @@
 import React from 'react';
 import './Header.css';
+import { Link } from 'react-router-dom';
 import logo from '../../assets/caronae-logo.png';
 
 const Header = () => {
     return (
         <header className="page-header">
-            <img src={logo} alt="Logo" className="logo" />
+            <Link to='/'><img src={logo} alt="Logo" className="logo" /></Link>
             <div className="color-bars">
                 <div className="color-bar bar1"></div>
                 <div className="color-bar bar2"></div>
