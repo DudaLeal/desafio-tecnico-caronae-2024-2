@@ -1,4 +1,3 @@
-// src/components/ToggleButton/ToggleButton.jsx
 import React, { useState } from 'react';
 import './ToggleButton.css';
 
@@ -7,7 +6,7 @@ const ToggleButton = ({ onToggle }) => {
 
   const handleToggle = (option) => {
     setSelectedOption(option);
-    onToggle(option); // Comunica a seleção ao componente pai
+    onToggle(option); 
   };
 
   return (

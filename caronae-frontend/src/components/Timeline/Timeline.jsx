@@ -1,5 +1,5 @@
 import React from 'react';
-import './Timeline.css'; // Importando o arquivo de estilos
+import './Timeline.css';
 
 const Timeline = ({ horario_partida,
   local_partida,
