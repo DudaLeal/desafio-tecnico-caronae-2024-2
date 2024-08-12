@@ -1,16 +1,30 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useCarona } from "../../context/CaronaContext";
 import Timeline from "../../components/Timeline/Timeline";
+import defaultPhoto from '../../assets/default-photo.jpg';
+import { verificarLinkImagem } from '../../utils/verificarLinkImagem.js';
 import "./RideDetails.css";
 
 const RideDetails = () => {
   const { id } = useParams();
   const { caronas, error } = useCarona();
-
-  if (error) return <p>Error: {error.message}</p>;
+  const [imageSrc, setImageSrc] = useState(defaultPhoto);
 
   const carona = caronas.find((carona) => carona.motorista.telefone === id);
+
+  useEffect(() => {
+    const verificarImagem = async () => {
+      if (carona && carona.motorista.foto) {
+        const isLinkValid = await verificarLinkImagem(carona.motorista.foto);
+        setImageSrc(isLinkValid ? carona.motorista.foto : defaultPhoto);
+      }
+    };
+
+    verificarImagem();
+  }, [carona]);
+
+  if (error) return <p>Error: {error.message}</p>;
 
   if (!carona) {
     return <div>Carregando...</div>;
@@ -20,7 +34,10 @@ const RideDetails = () => {
     <div className="ride-details">
       <div className="driver-card">
         <div className="driver-image">
-          <img src={carona.motorista.foto} alt={carona.motorista.nome} />
+          <img
+            src={imageSrc}
+            alt={carona.motorista.nome}
+          />
         </div>
         <div className="driver-info">
           <h2 className="driver-name">{carona.motorista.nome}</h2>
